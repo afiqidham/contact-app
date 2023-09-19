@@ -18,8 +18,10 @@ function App() {
   const removeContactHandler = (id) => {
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
-    })
-  }
+    });
+
+    setContacts(newContactList);
+  };
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
