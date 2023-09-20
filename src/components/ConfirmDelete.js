@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const ConfirmDelete = (props) => {
 
-    const {name} = props.location.state.contact;
+    const {id, name} = props.location.state.contact;
 
     const deleteContactHandler = (id) => {
         props.getContactId(id);
@@ -19,7 +19,7 @@ const ConfirmDelete = (props) => {
                     <button>No</button>
                     </Link>
                     <Link to="/">
-                    <button onClick={deleteContactHandler}>Yes</button>
+                    <button onClick={()=>deleteContactHandler(id)}>Yes</button>
                     </Link>
                 </div>
             </div>
