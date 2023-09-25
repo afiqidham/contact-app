@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
+import { useContactCrud } from "../context/ContactCrud";
 
 const ConfirmDelete = (props) => {
 
     const {id, name} = props.location.state.contact;
 
+    
+    const {removeContactHandler} = useContactCrud();
     const deleteContactHandler = (id) => {
-        props.getContactId(id);
+        removeContactHandler(id);
      
     }
 
